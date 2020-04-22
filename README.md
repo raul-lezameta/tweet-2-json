@@ -1,9 +1,9 @@
-#tweet2json Documentation
+# tweet2json Documentation
 
-##About 
+## About 
 
 tweet2json is a Twitter scraper that functions like an API. It takes data publicly available on Twitter.com and reformats it into programming-friendly JSON for your hacking needs.
-###But doesn't Twitter already have an API?
+### But doesn't Twitter already have an API?
 
 Yep--and if you're OK with their terms of use you should use it. 
 
@@ -15,7 +15,7 @@ Some reasons you might want to use this instead:
 *	You want tweeted images from Instagram to show up as cards like every other service
 *	You're punk rock
 
-##Setup
+## Setup
 
 tweet2json is stupidly easy to install: download the script and put it where you want to run it. It uses `json_encode()` and so requires PHP 5.2 or better.
 
@@ -28,11 +28,11 @@ Comments in the code and the [Usage](#usage) section below will indicate how to 
 will do it, provided the file path in your `include()` is correct.
 
 <a id="usage"></a>
-##Usage
+## Usage
 
 tweet2json has two methods: `user_tweets()`, which returns tweet data from a public account by username, and `search_tweets()`, which returns public tweet data from Twitter search based on a given query.
 
-###user_tweets
+### user_tweets
 
 `user_tweets()`  returns tweet data from a public account by username. It accepts four arguments, only of which is required.
 
@@ -48,7 +48,7 @@ An example command:
 
 	user_tweets('cosmocatalano', 1, TRUE);
 
-####Return
+#### Return
 
 `user_tweets()` Returns a JSON object with an entry for each tweet. It looks like this:
 
@@ -104,7 +104,7 @@ For _video_ (Vine, YouTube, Vimeo):
 *	**iframe** the HTML iframe that displays the video.
 *	**href** the location of the page containing the video.
 
-###search_tweets 
+### search_tweets 
 
 `search_tweets()` returns public tweet data from Twitter search based on a given query. It accepts four arguments, one of which is required.
 
@@ -122,22 +122,22 @@ An example command:
 
 	search_tweets('obama', 1, TRUE, FALSE);
 	
-####Return
+#### Return
 
 `search_tweets()` Returns a JSON object with an entry for each tweet, with the same values as `user_tweets()` listed above.
 
 
-##FAQ
+## FAQ
 
-###Won't Twitter just block this?
+### Won't Twitter just block this?
 
 They could, but it would be hard to do because of user-agent spoofing, distribution across different IPs and the like. 
 
-###Isn't this scrape subject to failing at any time?
+### Isn't this scrape subject to failing at any time?
 
 Yes--Twitter is extremely likely to break it with design updates from time to time, which is why all the regexes and explode strings that it uses are stored in an array at the front of the script for easy repair. I plan to maintain it as closely as I can.
 
-###You used regex for parsing HTML?
+### You used regex for parsing HTML?
 
 Father forgive me for I have sinned.
 
